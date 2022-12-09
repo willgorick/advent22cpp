@@ -1,0 +1,9 @@
+CC = clang++
+CFLAGS = -Wall -std=c++20
+
+main: main.o tail.o
+	$(CC) $(CFLAGS) -o main main.o tail.o
+
+main.o: main.cpp tail.h
+	$(CC) $(CFLAGS) -c main.cpp
+tail.o: tail.h
